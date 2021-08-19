@@ -1,5 +1,5 @@
 # Mynote
 **Under Development!!**  
-Note Applicatuon for Laptop PC  
+Note Application for Laptop PC  
   
 ![image](ss.png)
