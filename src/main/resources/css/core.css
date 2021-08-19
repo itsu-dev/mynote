@@ -1,0 +1,106 @@
+#base-border-pane {
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
+}
+
+#menu-bar-box {
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+    -fx-pref-height: 40px;
+}
+
+#menu-bar-item {
+    -fx-min-height: 40px;
+    -fx-max-height: 40px;
+    -fx-pref-height: 40px;
+    -fx-font-size: 12pt;
+    -fx-padding: 0 16 0 16;
+}
+
+#control-bar-box {
+    -fx-min-height: 48px;
+    -fx-max-height: 48px;
+    -fx-pref-height: 48px;
+}
+
+#control-bar-item {
+    -fx-min-height: 48px;
+    -fx-max-height: 48px;
+    -fx-pref-height: 48px;
+    -fx-padding: 0 16 0 16;
+    -fx-font-size: 12pt;
+}
+
+#control-bar-item.selected {
+    -fx-min-height: 48px;
+    -fx-max-height: 48px;
+}
+
+#side-bar-box {
+    -fx-min-width: 64px;
+    -fx-max-width: 64px;
+    -fx-pref-width: 64px;
+}
+
+#side-bar-item {
+    -fx-min-width: 64px;
+    -fx-max-width: 64px;
+    -fx-pref-width: 64px;
+    -fx-min-height: 64px;
+    -fx-max-height: 64px;
+    -fx-pref-height: 64px;
+    -fx-padding: 8;
+}
+
+#left-side-menu-box {
+    -fx-min-width: 0px;
+    -fx-max-width: 192px;
+    -fx-pref-width: 192px;
+}
+
+#right-side-menu-box {
+    -fx-min-width: 0px;
+    -fx-max-width: 192px;
+    -fx-pref-width: 192px;
+}
+
+#note-canvas-scroll-pane {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+    -fx-border-width: 0;
+    -fx-padding: 0;
+}
+
+#note-ruled-canvas {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+#note-ruled-canvas:focused {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+#note-writable-canvas {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+#note-writable-canvas:focused {
+    -fx-faint-focus-color: transparent;
+    -fx-focus-color: transparent;
+}
+
+#note-title-input {
+    -fx-background-color: transparent;
+    -fx-min-height: 48px;
+    -fx-pref-height: 48px;
+    -fx-max-width: 336px;
+    -fx-pref-width: 336px;
+    -fx-font-size: 24pt;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 0;
+}
+
+#note-date-label {
+    -fx-font-size: 13pt;
+}
