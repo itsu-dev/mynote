@@ -20,6 +20,7 @@ class MenuBar : VBox() {
     private var insertControlBar = InsertControlBar()
     private var displayControlBar = DisplayControlBar()
     private var helpControlBar = HelpControlBar()
+    private var drawControlBar = DrawControlBar()
 
     init {
         this.id = "menu-bar-base"
@@ -51,6 +52,7 @@ class MenuBar : VBox() {
                 "insert" -> insertControlBar
                 "display" -> displayControlBar
                 "help" -> helpControlBar
+                "draw" -> drawControlBar
                 else -> null
             }
 

@@ -2,6 +2,7 @@ package dev.itsu.mynote.ui.note
 
 import javafx.animation.ScaleTransition
 import javafx.geometry.Pos
+import javafx.scene.Cursor
 import javafx.scene.control.Label
 import javafx.scene.control.ScrollPane
 import javafx.scene.control.TextField
@@ -18,10 +19,11 @@ class Note : ScrollPane() {
     private var lockToScroll = false
     private var isLastScrollByTouch = false
 
-    var enableScrollByTouch = true // 指でのスクロールを可能にするか
+    var enableScrollByTouch = false // 指でのスクロールを可能にするか
 
     private val titleInput = TextField("無題のページ")
     private val dateLabel = Label()
+    private val pane = Pane()
 
     private val stackPane = StackPane().also {
         it.id = "note-canvas"
@@ -77,7 +79,8 @@ class Note : ScrollPane() {
         ruledCanvas.heightProperty().bind(writableCanvas.heightProperty())
         ruledCanvas.relocate(0.0, 0.0)
 
-        stackPane.children.addAll(Pane(ruledCanvas, writableCanvas, vBox))
+        pane.children.addAll(ruledCanvas, writableCanvas, vBox)
+        stackPane.children.add(pane)
 
         this.id = "note-canvas-scroll-pane"
         this.content = stackPane
@@ -139,6 +142,10 @@ class Note : ScrollPane() {
         transition.byY = -0.1
         transition.byZ = 0.0
         transition.play()
+    }
+
+    fun setCanvasCursor(cursor: Cursor) {
+        writableCanvas.cursor = cursor
     }
 
 }
