@@ -1,0 +1,63 @@
+#base-border-pane {
+    -fx-effect: innershadow(gaussian, rgba(0, 0, 0, 0.5), 10, 0, 0, 0);
+}
+
+#menu-bar-base {
+    -fx-background-color: #778beb;
+}
+
+#menu-bar-box {
+    -fx-background-color: #546de5;
+}
+
+#menu-bar-item {
+    -fx-text-fill: white;
+}
+
+#menu-bar-item.selected {
+    -fx-border-color: #f8a5c2;
+    -fx-border-width: 0 0 2 0;
+}
+
+#control-bar-box {
+    -fx-background-color: #778beb;
+}
+
+#control-bar-item {
+    -fx-text-fill: white;
+    -fx-background-color: #778beb;
+}
+
+#control-bar-item.selected {
+    -fx-background-color: #574b90;
+}
+
+#side-bar-base {
+    -fx-background-color: #546de5;
+}
+
+#side-bar-box {
+    -fx-background-color: #778beb;
+}
+
+#side-bar-item {
+    -fx-background-color: #778beb;
+}
+
+#side-bar-item.selected {
+    -fx-border-color: #f8a5c2;
+    -fx-border-width: 0 0 0 3;
+    -fx-background-color: #574b90;
+}
+
+#left-side-menu-box {
+    -fx-border-width: 0 1 0 0;
+    -fx-border-color: #778beb;
+    -fx-background-color: #546de5;
+}
+
+#right-side-menu-box {
+    -fx-border-width: 0 0 0 1;
+    -fx-border-color: #778beb;
+    -fx-background-color: #546de5;
+}

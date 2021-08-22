@@ -1,0 +1,12 @@
+#note-canvas {
+    -fx-background-color: white;
+}
+
+#note-title-input {
+    -fx-text-fill: black;
+    -fx-border-color: black;
+}
+
+#note-date-label {
+    -fx-text-fill: gray;
+}
