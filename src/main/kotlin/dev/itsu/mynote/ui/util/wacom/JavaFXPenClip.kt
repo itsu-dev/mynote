@@ -1,4 +1,4 @@
-package dev.itsu.mynote.ui.note.pen
+package dev.itsu.mynote.ui.util.wacom
 
 import jpen.owner.PenClip
 import java.awt.Point

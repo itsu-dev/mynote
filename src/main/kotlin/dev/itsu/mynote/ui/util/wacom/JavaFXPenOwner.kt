@@ -1,9 +1,7 @@
-package dev.itsu.mynote.ui.note.pen
+package dev.itsu.mynote.ui.util.wacom
 
-import javafx.event.EventType
 import javafx.scene.Node
 import javafx.scene.canvas.Canvas
-import javafx.scene.layout.Region
 import jpen.PenProvider
 import jpen.owner.AbstractPenOwner
 import jpen.owner.PenClip
@@ -11,7 +9,6 @@ import jpen.provider.osx.CocoaProvider
 import jpen.provider.system.SystemProvider
 import jpen.provider.wintab.WintabProvider
 import jpen.provider.xinput.XinputProvider
-import java.awt.event.MouseEvent
 import java.lang.ref.WeakReference
 
 class JavaFXPenOwner(private val canvas: Canvas) : AbstractPenOwner() {
@@ -64,7 +61,6 @@ class JavaFXPenOwner(private val canvas: Canvas) : AbstractPenOwner() {
     protected fun getPenSchedulerLock(node: Node?): Any {
         if (node != null) {
             Thread.currentThread()
-            // if (Thread.holdsLock(region.))
         }
         return this.penManagerHandle.penSchedulerLock
     }

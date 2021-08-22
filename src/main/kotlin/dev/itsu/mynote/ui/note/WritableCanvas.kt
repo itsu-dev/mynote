@@ -1,20 +1,11 @@
 package dev.itsu.mynote.ui.note
 
 import dev.itsu.mynote.data.Settings
-import dev.itsu.mynote.ui.note.pen.JavaFXPenOwner
+import dev.itsu.mynote.ui.util.wacom.JavaFXPenOwner
 import javafx.scene.Cursor
-import javafx.scene.canvas.GraphicsContext
-import javafx.scene.control.Label
-import javafx.scene.input.TouchEvent
 import javafx.scene.paint.Color
 import jpen.*
 import jpen.event.PenListener
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.javafx.JavaFx
-import kotlinx.coroutines.launch
-import java.util.concurrent.ConcurrentLinkedQueue
-import kotlin.math.min
 
 class WritableCanvas : ResizableCanvas() {
 
@@ -24,10 +15,14 @@ class WritableCanvas : ResizableCanvas() {
     private var y = 0.0
     private val gc = this.graphicsContext2D
 
-    init {
-        gc.stroke = Color.BLACK
-        gc.lineWidth = 1.0
+    var pen = Pen(1.0, 0.4, Color.BLACK)
+        set(value) {
+            field = value
+            gc.lineWidth = value.width
+            gc.stroke = value.color
+        }
 
+    init {
         cursor = if (Settings.drawWithPen) Cursor.TEXT else Cursor.DEFAULT
 
         val penOwner = JavaFXPenOwner(this)
@@ -47,7 +42,7 @@ class WritableCanvas : ResizableCanvas() {
                     } else {
                         pX = e.pen.getLevelValue(PLevel.Type.X).toDouble()
                         pY = e.pen.getLevelValue(PLevel.Type.Y).toDouble()
-                        gc.lineWidth = 1.0 + if (pressure > 0.4) (pressure - 0.4) * 2 else 0.0
+                        gc.lineWidth = pen.width + if (pressure > pen.sensitivity) (pressure - pen.sensitivity) * 2 else 0.0
                         gc.strokeLine(x, y, pX, pY)
                         x = pX
                         y = pY

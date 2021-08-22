@@ -10,6 +10,7 @@ import javafx.scene.input.ScrollEvent
 import javafx.scene.layout.Pane
 import javafx.scene.layout.StackPane
 import javafx.scene.layout.VBox
+import javafx.scene.paint.Color
 import javafx.util.Duration
 import java.text.SimpleDateFormat
 import java.util.*
@@ -71,6 +72,7 @@ class Note : ScrollPane() {
 
         writableCanvas.width = 2000.0
         writableCanvas.height = 1000.0
+        setPen(Pen(3.0, 0.4, Color.DARKGREEN))
         writableCanvas.relocate(0.0, 0.0)
 
         ruledCanvas.widthProperty().bind(this.widthProperty())
@@ -146,6 +148,10 @@ class Note : ScrollPane() {
 
     fun setCanvasCursor(cursor: Cursor) {
         writableCanvas.cursor = cursor
+    }
+
+    fun setPen(pen: Pen) {
+        writableCanvas.pen = pen
     }
 
 }
